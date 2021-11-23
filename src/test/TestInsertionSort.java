@@ -1,6 +1,6 @@
-package test;
+//package test;
 
-import sortieren.InsertionSort;
+/*import sortieren.InsertionSort;
 
 import java.util.Arrays;
 
@@ -26,3 +26,5 @@ public class TestInsertionSort {
 
     }
 }
+
+ */

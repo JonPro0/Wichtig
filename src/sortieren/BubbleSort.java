@@ -1,14 +1,12 @@
 package sortieren;
-
+import gui.ArrayPanel;
 import gui.SortierAusgabe;
 import util.Util;
-
 import java.util.Arrays;
-
+import java.util.concurrent.TimeUnit;
 public class BubbleSort {
     private SortierAusgabe ausgabe;
     private int[] a;
-
     public BubbleSort(int[] input) {
         a = input;
         this.ausgabe = null;
@@ -20,7 +18,7 @@ public class BubbleSort {
         ausgabe.println("BubbleSort gestartet");
     }
 
-    public void sortieren() {
+    public void sortieren(ArrayPanel parray, SortierAusgabe ausgabe) {
         // Äußere Schleife, separiert unsortierten von sortiertem Bereich
         if (ausgabe != null) {
             ausgabe.println("Vorher: " + Arrays.toString(a));
@@ -28,8 +26,14 @@ public class BubbleSort {
 
         for (int i = a.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                if (a[j] > a[j+1]) {
-                    Util.swap(a, j, j+1);
+                if (a[j] > a[j + 1]) {
+                    Util.swap(a, j, j + 1);
+                    parray.setArray(a);
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException ex) {
+                        Thread.currentThread().interrupt();
+                    }
                 }
             }
         }

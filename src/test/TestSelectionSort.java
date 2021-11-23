@@ -1,4 +1,4 @@
-package test;
+/*package test;
 
 import sortieren.SelectionSort;
 import util.ArrayGenerator;
@@ -25,3 +25,4 @@ public class TestSelectionSort {
 
     }
 }
+*/
